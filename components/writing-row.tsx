@@ -10,16 +10,19 @@ interface WritingRowProps {
 
 export function WritingRow({ entry }: WritingRowProps) {
   return (
-    <motion.div
+    <motion.article
       whileHover={{ backgroundColor: "rgba(22, 22, 25, 0.5)" }}
       transition={{ duration: 0.2 }}
       className="flex flex-col items-start justify-between gap-3 rounded-lg px-2 py-[18px] sm:flex-row sm:items-center sm:gap-4"
     >
       <div className="flex flex-col gap-1">
-        <span className="text-base font-semibold tracking-tight text-white">
+        <h3
+          className="text-base font-semibold tracking-tight text-white"
+          style={{ textWrap: "balance" }}
+        >
           {entry.title}
-        </span>
-        <span className="text-xs text-dim">{entry.subtitle}</span>
+        </h3>
+        <p className="text-xs text-dim">{entry.subtitle}</p>
         {entry.mostRecent && (
           <div className="mt-1">
             <MostRecentBadge />
@@ -27,11 +30,14 @@ export function WritingRow({ entry }: WritingRowProps) {
         )}
       </div>
       <div className="flex shrink-0 items-center gap-2">
-        <span className="h-[7px] w-[7px] rounded-full bg-teal" />
+        <span
+          className="h-[7px] w-[7px] rounded-full bg-teal"
+          aria-hidden="true"
+        />
         <span className="font-mono text-[11px] text-silver-muted">
           {entry.status}
         </span>
       </div>
-    </motion.div>
+    </motion.article>
   );
 }

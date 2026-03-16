@@ -39,7 +39,10 @@ function StarSvg() {
 
 export function StarField() {
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    <div
+      className="pointer-events-none absolute inset-0 overflow-hidden"
+      aria-hidden="true"
+    >
       {stars.map((star, i) => (
         <div
           key={i}

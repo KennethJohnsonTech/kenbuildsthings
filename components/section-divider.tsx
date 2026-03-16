@@ -2,7 +2,7 @@
 
 export function SectionDivider() {
   return (
-    <div className="w-full">
+    <div className="w-full" aria-hidden="true" role="separator">
       <div
         className="h-0.5 w-full"
         style={{

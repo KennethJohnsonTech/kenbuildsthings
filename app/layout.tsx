@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   title: "Ken Builds Things — Portfolio",
   description:
     "I build AI-powered products and tools that solve real problems for real people. Full-stack developer, builder, and maker.",
+  other: {
+    "theme-color": "#0C0C0E",
+    "color-scheme": "dark",
+  },
   openGraph: {
     title: "Ken Builds Things — Portfolio",
     description:
@@ -39,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ colorScheme: "dark" }}>
       <body className={`${inter.variable} ${spaceMono.variable}`}>
         {children}
       </body>

@@ -21,9 +21,9 @@ export function About() {
         >
           {aboutSections.map((section) => (
             <div key={section.heading} className="flex flex-col gap-3">
-              <span className="font-mono text-[11px] font-semibold tracking-wider text-teal">
+              <h3 className="font-mono text-[11px] font-semibold tracking-wider text-teal">
                 {section.heading}
-              </span>
+              </h3>
               <p className="text-sm leading-[1.6] text-silver">
                 {section.body}
               </p>
@@ -46,6 +46,7 @@ export function About() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
+                  aria-hidden="true"
                 >
                   <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
                   <circle cx="8.5" cy="8.5" r="1.5" />

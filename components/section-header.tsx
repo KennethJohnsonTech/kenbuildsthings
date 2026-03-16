@@ -16,11 +16,18 @@ export function SectionHeader({ label, count }: SectionHeaderProps) {
       transition={{ duration: 0.5 }}
       className="flex items-center gap-4"
     >
-      <span className="font-mono text-[11px] font-semibold tracking-wider text-teal">
+      <h2 className="font-mono text-[11px] font-semibold tracking-wider text-teal">
         {label}
-      </span>
-      <div className="h-px flex-1 bg-teal-dim" />
-      {count && <span className="font-mono text-[10px] text-dim">{count}</span>}
+      </h2>
+      <div className="h-px flex-1 bg-teal-dim" aria-hidden="true" />
+      {count && (
+        <span
+          className="font-mono text-[10px] text-dim"
+          aria-label={`${count} items`}
+        >
+          {count}
+        </span>
+      )}
     </motion.div>
   );
 }
