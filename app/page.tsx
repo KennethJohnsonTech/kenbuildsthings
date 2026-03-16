@@ -19,7 +19,7 @@ export default function Home() {
         <StarField />
         <main id="main-content" className="relative z-10 flex flex-col">
           {/* Header + Hero */}
-          <div className="flex flex-col gap-[72px] px-6 pt-0 pb-[72px] md:px-[72px]">
+          <div className="flex flex-col gap-10 px-6 pt-8 pb-16 md:gap-12 md:px-[72px] md:pt-10 md:pb-[72px]">
             <Header />
             <Hero />
           </div>

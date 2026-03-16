@@ -61,7 +61,7 @@ function ParallaxStar({
         left: `${(star.x / 1440) * 100}%`,
         top: star.y,
         y,
-        animation: `twinkle ${3 + (index % 5) * 0.8}s ease-in-out ${index * 0.3}s infinite`,
+        animation: `twinkle ${10 + (index % 5) * 2}s ease-in-out ${index * 1.5}s infinite`,
       }}
     >
       <StarSvg />

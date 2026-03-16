@@ -76,13 +76,7 @@ export function Header() {
           ))}
         </div>
       </div>
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="h-0.5 w-full origin-left bg-teal"
-        aria-hidden="true"
-      />
+      <div className="h-0.5 w-full bg-teal" aria-hidden="true" />
     </motion.header>
   );
 }
