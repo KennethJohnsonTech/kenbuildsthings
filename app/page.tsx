@@ -1,4 +1,5 @@
 import { StarField } from "@/components/star-field";
+import { ScrollProgress } from "@/components/scroll-progress";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
 import { SectionDivider } from "@/components/section-divider";
@@ -13,7 +14,8 @@ export default function Home() {
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>
-      <div className="relative mx-auto min-h-screen w-full max-w-[1440px]">
+      <ScrollProgress />
+      <div className="grain-overlay relative mx-auto min-h-screen w-full max-w-[1440px]">
         <StarField />
         <main id="main-content" className="relative z-10 flex flex-col">
           {/* Header + Hero */}

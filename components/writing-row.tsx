@@ -13,7 +13,7 @@ export function WritingRow({ entry }: WritingRowProps) {
     <motion.article
       whileHover={{ backgroundColor: "rgba(22, 22, 25, 0.5)" }}
       transition={{ duration: 0.2 }}
-      className="flex flex-col items-start justify-between gap-3 rounded-lg px-2 py-[18px] sm:flex-row sm:items-center sm:gap-4"
+      className="writing-arrow relative flex flex-col items-start justify-between gap-3 rounded-lg px-2 py-[18px] pr-8 sm:flex-row sm:items-center sm:gap-4"
     >
       <div className="flex flex-col gap-1">
         <h3

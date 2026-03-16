@@ -32,7 +32,7 @@ export function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs text-silver-muted transition-colors duration-200 hover:text-teal"
+                  className="link-underline font-mono text-xs text-silver-muted transition-colors duration-200 hover:text-teal"
                 >
                   {link.label}
                 </a>

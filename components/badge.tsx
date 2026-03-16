@@ -18,7 +18,7 @@ export function PriorityBadge({ priority, accentColor }: PriorityBadgeProps) {
     <span
       className={cn(
         "inline-flex h-7 w-7 items-center justify-center rounded font-mono text-[10px] font-bold",
-        "border-[1.5px]",
+        "border-[1.5px] transition-transform duration-200 hover:scale-110",
         accentStyles[accentColor],
       )}
     >
@@ -29,7 +29,10 @@ export function PriorityBadge({ priority, accentColor }: PriorityBadgeProps) {
 
 export function MostRecentBadge() {
   return (
-    <span className="inline-flex items-center gap-1 rounded-[3px] bg-fastest-lap px-1.5 py-0.5">
+    <span
+      className="inline-flex items-center gap-1 rounded-[3px] bg-fastest-lap px-1.5 py-0.5"
+      style={{ animation: "badge-pulse 2s ease-in-out infinite" }}
+    >
       <span className="h-[5px] w-[5px] rounded-full bg-white" />
       <span className="font-mono text-[7px] font-bold tracking-wide text-white">
         MOST RECENT

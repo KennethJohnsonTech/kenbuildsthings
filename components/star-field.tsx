@@ -1,5 +1,8 @@
 "use client";
 
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
 const stars = [
   { x: 42, y: 37 },
   { x: 1407, y: 95 },
@@ -37,6 +40,35 @@ function StarSvg() {
   );
 }
 
+function ParallaxStar({
+  star,
+  index,
+}: {
+  star: { x: number; y: number };
+  index: number;
+}) {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll();
+  // Alternate drift direction and speed per star for organic feel
+  const speed = index % 3 === 0 ? -30 : index % 3 === 1 ? -20 : -40;
+  const y = useTransform(scrollYProgress, [0, 1], [0, speed]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="absolute"
+      style={{
+        left: `${(star.x / 1440) * 100}%`,
+        top: star.y,
+        y,
+        animation: `twinkle ${3 + (index % 5) * 0.8}s ease-in-out ${index * 0.3}s infinite`,
+      }}
+    >
+      <StarSvg />
+    </motion.div>
+  );
+}
+
 export function StarField() {
   return (
     <div
@@ -44,17 +76,7 @@ export function StarField() {
       aria-hidden="true"
     >
       {stars.map((star, i) => (
-        <div
-          key={i}
-          className="absolute"
-          style={{
-            left: `${(star.x / 1440) * 100}%`,
-            top: star.y,
-            animation: `twinkle ${3 + (i % 5) * 0.8}s ease-in-out ${i * 0.3}s infinite`,
-          }}
-        >
-          <StarSvg />
-        </div>
+        <ParallaxStar key={i} star={star} index={i} />
       ))}
     </div>
   );
